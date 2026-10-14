@@ -60,7 +60,7 @@ jobs:
         shell: bash
         run: |
           cd dist
-          find . -type f -printf '%f\n' | sort | xargs sha256sum > SHA256SUMS
+          find . -type f ! -name SHA256SUMS -printf '%f\n' | sort | xargs sha256sum > SHA256SUMS
 
       - name: Create GitHub release
         uses: softprops/action-gh-release@v3
