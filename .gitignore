@@ -1,0 +1,33 @@
+# Go
+/bin/
+*.test
+*.out
+
+# Env / secrets
+.env*
+
+# Local DB files
+*.sqlite*
+*.db
+
+# Node
+node_modules/
+dist/
+# internal/webui/dist is the release embed target. Its scoped .gitignore
+# re-includes the directory and keeps only the committed placeholder
+# index.html; the real vite output copied in by `make release` stays ignored.
+
+# Misc
+.DS_Store
+*.log
+
+# pi / agent runtime noise (never commit)
+.pi/
+.ralph/
+.repowise/
+
+# Internal working notes (untracked content; excluded from ship)
+/checkpoint.md
+
+# Audit-kit local identity overlay (never commit real threat terms)
+/scripts/audit/identities.local.txt

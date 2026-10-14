@@ -1,0 +1,20 @@
+services:
+  db:
+    image: docker.io/library/postgres:18-alpine
+    container_name: api-first-kanban-db
+    environment:
+      POSTGRES_USER: kanban
+      POSTGRES_PASSWORD: kanban
+      POSTGRES_DB: kanban
+    ports:
+      - "127.0.0.1:54329:5432"
+    volumes:
+      - kanban-db-data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kanban -d kanban"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  kanban-db-data:

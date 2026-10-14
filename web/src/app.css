@@ -1,0 +1,30 @@
+@import 'tailwindcss';
+
+/* Tailwind 4: configuration lives in CSS via @theme, not tailwind.config.js. */
+
+/* PB-121: thin, visible scrollbar for the board column strip ONLY.
+   Scoped via .board-column-strip so the rest of the UI is untouched. */
+.board-column-strip {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+.board-column-strip:hover {
+  scrollbar-color: #94a3b8 transparent;
+}
+.board-column-strip:focus-visible {
+  outline: 2px solid #64748b;
+  outline-offset: -2px;
+}
+.board-column-strip::-webkit-scrollbar {
+  height: 8px;
+}
+.board-column-strip::-webkit-scrollbar-track {
+  background: transparent;
+}
+.board-column-strip::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+.board-column-strip:hover::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+}

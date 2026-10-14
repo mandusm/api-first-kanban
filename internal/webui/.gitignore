@@ -1,0 +1,9 @@
+# dist/ is the frontend build output embedded into the binary (see webui.go).
+# A real build must never be committed, but the placeholder index.html must be,
+# otherwise a fresh clone (no pnpm/node) fails to compile. The root .gitignore
+# ignores every dist/ directory, so re-include this one and then keep ignoring
+# its contents except the placeholder. Scoped here on purpose: the release
+# ignore/copy pattern belongs to PB-95, not this package.
+!/dist/
+/dist/*
+!/dist/index.html
